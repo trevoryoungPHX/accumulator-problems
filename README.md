@@ -37,3 +37,6 @@ You may encounter challenges that seem confusing or impossible. Don't despair! T
 When you're done with the main assignment, your page should look like this. Green check marks next to each test means the entire test suite is passing.
 
 ![](images/passing.png)
+
+### NOTE:
+If your code has an error, all of the tests will fail without warning or explanation.  Check your syntax. 
