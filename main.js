@@ -3,8 +3,8 @@
 SAMPLE
 ----------------------------------------
 
-Challenge: Write function named test that returns the string "This Works!". 
-Solution: This one has already been complete for you. 
+Challenge: Write function named test that returns the string "This Works!".
+Solution: This one has already been completed for you.
 
 */
 
@@ -20,10 +20,34 @@ function test() {
 CHALLENGE
 ----------------------------------------
 
-Write function named sum that will take an array of numbers and return the sum of them
+Write function named sum that will take an array of numbers and return the sum of them.
 
 Example: if you pass it [1,2,3] then it should return 6 (which is 1 + 2 + 3)
+
+NOTE: always look at the test results to see further details about what the test is expecting.
+For example, the tests require that to complete this challenge, your function must return
+0 if the input is empty. Please see the README file for an explanation of how to expand the test
+results on the index page in the browser.
 */
+
+
+
+
+
+
+
+
+
+/*
+----------------------------------------
+CHALLENGE
+----------------------------------------
+
+Write function named doubleLetters that will take a string and double every letter in the string
+
+Example: if you pass it "abc" then it should return "aabbcc"
+*/
+
 
 
 
@@ -63,24 +87,6 @@ Examples:
 
 - if you call multiplyNumbers([1,2,3], 0) you'd get [0,0,0]
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
-*/
-
-
-
-
-
-
-
-
-
-/*
-----------------------------------------
-CHALLENGE
-----------------------------------------
-
-Write function named doubleLetters that will take a string and double every letter in the string
-
-Example: if you pass it "abc" then it should return "aabbcc"
 */
 
 
@@ -794,4 +800,4 @@ If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 
 
 
-// 
+//
