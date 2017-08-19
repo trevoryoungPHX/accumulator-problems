@@ -270,7 +270,7 @@ Write a function named sumLetters that returns the sum of every character in the
 Example:
 
 If you pass "45" it should return 9
-If you pass "246" it should return 10
+If you pass "246" it should return 12
 */
 
 
