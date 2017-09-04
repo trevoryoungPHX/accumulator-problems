@@ -31,12 +31,17 @@ results on the index page in the browser.
 */
 
 
+var numbers = [1, 5, 7, 3, 8, 9];
 
+function sum(arr) {
+ var total=0;
+ for (i=0; i<arr.length; i++) {
+ total+=arr[i];
+ }
+return total;
+}
 
-
-
-
-
+sum(arr);
 
 /*
 ----------------------------------------
@@ -48,13 +53,16 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
+var str = "abc";
+function doubleLetters(str) {
+  var doubled = "";
+for(var i = 0; i < str.length; i++){
+   doubled += str[i] + str[i];
+}
+return doubled;
+}
 
-
-
-
-
-
-
+doubleLetters(str)
 
 
 /*
@@ -68,7 +76,16 @@ Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
 
+var numbers = [1, 5, 7, 3, 8, 9];
 
+function doubleNumbers(arr) {
+    for (var i=0; i<arr.length; i++) {
+     arr[i] *= 2
+ }
+return arr;
+}
+
+doubleNumbers(numbers);
 
 
 
@@ -92,7 +109,16 @@ Examples:
 
 
 
+var numbers = [1, 5, 7, 3, 8, 9];
 
+function multiplyNumbers(arr, number) {
+    for (var i=0; i<arr.length; i++) {
+     arr[i] *= number
+ }
+return arr;
+}
+
+multiplyNumbers(numbers, 4);
 
 
 
@@ -110,14 +136,17 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 NOTE: you can assume each input will be the same length
 */
 
+var array1 = ["a", "b", "c"];
+var array2 = ["d", "e", "f"];
 
-
-
-
-
-
-
-
+function interleave(array1, array2) {
+    var c = [];
+    for (var i = 0; i < array1.length; i++) {
+        c.push(array1[i], array2[i]);
+    }
+    return c;
+}
+interleave(array1, array2)
 
 
 /*
@@ -131,9 +160,15 @@ Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "
 */
 
 
+function createRange(number, value) {
+  var arr = [];
+  for (var i = 0; i < number; i++) {
+    arr.push(value);
+  }
+  return arr;
+}
 
-
-
+createRange(5, "Hello")
 
 
 
@@ -150,12 +185,16 @@ If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "br
 */
 
 
+var array = ["quick", "brown", "fox"]
+function flipArray(array) {
+  var newObject ={};
+  for (var i=0; i<array.length; i++) {
+    newObject[array[i]] = i;
+  }
+  return newObject;
+}
 
-
-
-
-
-
+flipArray(array)
 /*
 ----------------------------------------
 CHALLENGE
@@ -171,9 +210,16 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 
 
 
+var array = [[2014, "Horse"], [2015, "Sheep"]];
+function arraysToObject(array) {
+  var object = {};
+  for (var i = 0; i < array.length; i++) {
+    object[array[i][0]] = array[i][1];
+  }
+  return object;
+}
 
-
-
+arraysToObject(array);
 
 
 
@@ -189,16 +235,15 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
-
-
-
-
-
-
-
-
-
-
+var str= "Trevor"
+function reverseString(str) {
+  var newStr = "";
+  for (var i = str.length-1; i>=0; i--) {
+    newStr += str[i];
+  }
+   return newStr;
+}
+reverseString(str);
 
 /*
 ----------------------------------------
@@ -215,8 +260,19 @@ If you pass it "heehaw" then it should return false because "hee" doesn't equal 
 */
 
 
+str = "hahah"
+function repeats(str) {
+  var mid = Math.floor(str.length/2)
+  var newStr = str.slice(0, mid);
+  var secondStr = str.slice(mid);
+  if (newStr === secondStr) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-
+repeats(str)
 
 
 
@@ -234,7 +290,18 @@ If you pass it "abcdef" then it should return "ace" because those represent ever
 */
 
 
+str = "abcdef"
+function everyOther(str){
+  var newStr = "";
+    for(var i = 0; i<str.length; i++) {
+      if (i%2 === 0) {
+        newStr += str[i];
+      }
+    }
+    return newStr;
+}
 
+everyOther(str)
 
 
 
@@ -255,7 +322,17 @@ If you pass "aba" it should return false
 
 
 
-
+str = "abbbbba"
+function allEqual(str) {
+  var state = true;
+    for(var i = 0; i<str.length; i++) {
+      if (str[0] !== str[i]) {
+     state = false;
+     }
+}
+return state
+}
+allEqual(str)
 
 
 
@@ -274,8 +351,16 @@ If you pass "246" it should return 12
 */
 
 
-
-
+// var str = '2133245';
+// var numbers = parseInt(str, 10);
+// function sumLetters(numbers)  {
+// var total = 0;
+// for (var i = 0; i < ; i++) {
+//   total += numbers[i];
+// }
+// return total;
+// }
+// sumLetters(numbers)
 
 
 
@@ -294,6 +379,20 @@ If you pass "you" it should return 2
 
 
 
+var str = "Trevor";
+function countVowels(str) {
+  var vowelcount = 0;
+  var vowels = 'aeiouAEIOU';
+  for(var i = 0; i < str.length ; i++) {
+    if (vowels.indexOf(str[i]) !== -1)
+    {
+      vowelcount += 1;
+    }
+
+  }
+  return vowelcount;
+}
+countVowels(str)
 
 
 
@@ -315,9 +414,16 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
-
-
-
+// str = "abc"
+// function split(str) {
+//   var arr = [];
+//   for (i =0; i < str.length; i++ ) {
+//
+//   }
+// return arr
+// }
+//
+// split(str)
 
 
 
@@ -336,7 +442,15 @@ Example:
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
 
-
+// var str = 'hello';
+// function getCodePoints(str) {
+//   var codePoints = [];
+//   for (i=0; i<str.length; i++) {
+//     str.codePointAt[i]
+//     }
+//     return codePoints;
+// }
+// getCodePoints(str)
 
 
 
@@ -626,7 +740,7 @@ If you pass [0,-3,2,5] it should return -3
 */
 
 
-
+Math.min(1, 2, 3)
 
 
 
