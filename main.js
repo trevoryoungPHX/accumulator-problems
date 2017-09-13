@@ -351,17 +351,20 @@ If you pass "246" it should return 12
 */
 
 
-// var str = '2133245';
-// var numbers = parseInt(str, 10);
-// function sumLetters(numbers)  {
-// var total = 0;
-// for (var i = 0; i < ; i++) {
-//   total += numbers[i];
-// }
-// return total;
-// }
-// sumLetters(numbers)
+var input = '2133248885';
 
+function sumLetters(input)  {
+var total = 0;
+var result = [];
+for(var i=0; i<input.length; i++) {
+  result[i] = parseInt(input[i], 10); } {
+ for (var j = 0; j < input.length; j++) {
+total += result[j];
+                }
+return total;
+}
+}
+sumLetters(input);
 
 
 
@@ -414,16 +417,17 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
-// str = "abc"
-// function split(str) {
-//   var arr = [];
-//   for (i =0; i < str.length; i++ ) {
-//
-//   }
-// return arr
-// }
-//
-// split(str)
+var str = "abc";
+
+function split(str){
+  var result = [];
+  for (i = 0; i < str.length; i++){
+  result.push(str[i])
+}
+return result;
+}
+
+split(str);
 
 
 
@@ -442,15 +446,15 @@ Example:
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
 
-// var str = 'hello';
-// function getCodePoints(str) {
-//   var codePoints = [];
-//   for (i=0; i<str.length; i++) {
-//     str.codePointAt[i]
-//     }
-//     return codePoints;
-// }
-// getCodePoints(str)
+var str = 'hello';
+function getCodePoints(str) {
+  var codePoints = [];
+  for (i=0; i<str.length; i++) {
+    codePoints.push(str.codePointAt(i))
+    }
+    return codePoints;
+}
+getCodePoints(str);
 
 
 
@@ -470,6 +474,16 @@ If you pass "Yo" it should return {Y: 0, o: 1}
 If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 */
 
+var str = "abc";
+
+function letterMap(str){
+  var result = {};
+  for (var i = 0; i < str.length; i++){
+  result[str[i]] = i;
+}
+return result;
+}
+letterMap(str);
 
 
 
@@ -491,8 +505,22 @@ If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 */
 
 
-
-
+var str = "hello";
+function letterCount(str){
+  var obj = {};
+  var counter = 0;
+for (var i = 0; i < str.length; i++){
+  for (var j = 0; j < str.length; j++) {
+    if (str[i] === str[j]) {
+    counter++;
+    }
+  }
+  obj[str[i]] = counter;
+  counter = 0; // resets counter at 0
+  }
+return obj;
+}
+letterCount(str);
 
 
 
@@ -511,7 +539,18 @@ If you pass 0,2 it should return false because the only number between 0 and 2 i
 If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
 */
 
-
+var numberOne = 0;
+var numberTwo = 6;
+function threeOdds(numberOne, numberTwo) {
+  var counter = 0;
+  for (var i = numberOne+1; i <numberTwo; i++) {
+  if (i % 2 !== 0) {
+    counter ++;
+  }
+}
+return counter >= 3; // this statement is true or false. It's like saying, if counter <=3, return true, else, return false. It does, so it will return true.
+}
+threeOdds(numberOne, numberTwo);
 
 
 
@@ -532,7 +571,18 @@ Example:
 If you pass "a", 3, "*" it should return "**a" - that is, a string of length 3, padded on the left by the "*" character
 */
 
-
+var str = "ha";
+var len = 9;
+var character = "*";
+function leftPad(str, len, char) {
+var newStr = "";
+for (var i = 0; i < (len-str.length); i++) {
+newStr += char;
+}
+newStr += str
+return newStr;
+}
+leftPad(str, len, character);
 
 
 
@@ -549,11 +599,19 @@ Write a function named createString that takes a number and a letter and creates
 Example:
 
 If you pass "a", 3 it should return "aaa"
-If you pass "b", 3 it should return "bb"
+If you pass "b", 2 it should return "bb"
 */
 
-
-
+var num = 4;
+var str= "a";
+function createString(num, str) {
+  var newStr = ""
+  for (var i = 0; i < num; i++) {
+  newStr += str;
+}
+return newStr;
+}
+createString(num, str)
 
 
 
@@ -575,7 +633,15 @@ If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 */
 
 
-
+var num = 4;
+function factorial(num) {
+var newNum = 1;
+for (var i = num; i>0; i--) {
+  newNum *= i;
+}
+return newNum
+}
+factorial(num)
 
 
 
@@ -595,7 +661,15 @@ If you pass 3 it should return [1,2,3]
 */
 
 
+function arrayOfNumbers(num) {
+  var newNum = [];
+  for (var i = 1; i <= num; i++) {
+    newNum.push(i)
+}
+return newNum
+}
 
+arrayOfNumbers(4)
 
 
 
@@ -615,9 +689,22 @@ If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "eve
 
 
 
+function evenOdd(num, numTwo) {
+  var newObj = {};
+  for (var i = num; i <= numTwo; i++) {
+  if (num === 0 && numTwo === 0) {
+    return newObj;
+  }
+else if(i % 2 === 0) {
+    newObj[i] = "even"; }
+    else {
+      newObj[i] = "odd"
+    }
+}
+return newObj;
+}
 
-
-
+evenOdd(0, 5)
 
 
 
@@ -634,9 +721,18 @@ If you pass 2,"d" it should return {"d": true, "dd": true}
 */
 
 
-
-
-
+var num = 3;
+var str = "d";
+function growingKeys(num, str) {
+  var newObj = {};
+  var newStr = "";
+for (var i = 1; i<=num; i++) {
+  newStr = str.repeat(i)
+  newObj[newStr] = true
+  }
+  return newObj
+}
+growingKeys (num, str)
 
 
 
@@ -656,7 +752,17 @@ If you pass [1,2], 1 it should return false
 */
 
 
-
+var num = 5;
+var arr = [5, 5, 5, 6]
+function every(arr, num) {
+  var statement = true;
+for (var i=0; i<arr.length; i++) {
+if (num !== arr[i])
+  return false;
+}
+return statement;
+}
+every(arr,num)
 
 
 
@@ -677,6 +783,18 @@ If you pass [3,2], 1 it should return false
 
 
 
+function some(arr, num) {
+  var statement = false;
+for (var i=0; i<arr.length; i++) {
+  if (num !== arr[i]){
+    statement;
+  } else {
+    statement = true;
+  }
+}
+return statement;
+}
+some([2,2, 2, 2, 2, 2, 2],3)
 
 
 
@@ -687,7 +805,7 @@ If you pass [3,2], 1 it should return false
 CHALLENGE
 ----------------------------------------
 
-Write a function named some that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
+Write a function named toSentence that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
 
 Example:
 
@@ -695,16 +813,21 @@ If you pass ["Sue", "Will"] it should return "Sue and Will"
 If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 */
 
-
-
-
-
-
-
-
-
-
-
+var arr = ["Sue", "Will", "Rachel"];
+function toSentence(arr) {
+  var str = "";
+  for (var i = 0; i<arr.length; i++) {
+    if (i === arr.length-1) {
+      str = str + " and " + arr[i];
+    } else if (i === arr.length-2) {
+      str = str + arr[i];
+    } else {``
+      str += arr[i] + ", ";
+    }
+  }
+  return str;
+};
+toSentence(arr);
 
 
 /*
@@ -722,7 +845,15 @@ If you pass ["Java", Script", "Object", "Notation"] it should return "JSON"
 
 
 
-
+var arr = ["Trevor", "Cole", "Young"]
+function acronym(arr) {
+  var newStr = [];
+  for (var i = 0; i<arr.length; i++) {
+    newStr.push(arr[i][0]);
+  }
+  return newStr.join("");
+}
+acronym(arr);
 
 
 
@@ -739,9 +870,14 @@ Example:
 If you pass [0,-3,2,5] it should return -3
 */
 
-
-Math.min(1, 2, 3)
-
+var arr = [5,1,9,5,7,-3];
+function min(arr) {
+for (var i=0; i<1; i++) {
+    arr.sort(function(a, b) {return a - b});
+}
+return arr[0];
+}
+min(arr)
 
 
 
@@ -762,11 +898,19 @@ If you pass [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}] it should return {1: {i
 
 */
 
+var arr1 = [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}];
+function index(arr, prop) {
+var newObj = {};
+// for (let i = 0; i<arr.length; i++) {
+//   newObj[arr[i].id] = arr[i]
+// }
 
-
-
-
-
+for (let i = 0; i<arr.length; i++) {
+  newObj[arr[i][prop]] = arr[i];
+}
+return newObj;
+}
+index(arr1);
 
 
 /*
@@ -784,7 +928,15 @@ If you pass {id: 1, name: "Joe"} it should return {1: "id", Joe: "name"}
 
 
 
-
+var obj = {id: 1, name: "Joe"}
+function invert(obj){
+  var inverted = {};
+  for(var key in obj){
+    inverted[obj[key]] = key;
+  }
+  return inverted;
+}
+invert(obj)
 
 
 
@@ -804,9 +956,14 @@ If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "fo
 */
 
 
-
-
-
+function addSignature (str, obj) {
+  newObj = {};
+  for (let key in obj) {
+    newObj[key + "-signed"] = (obj[key]+" - "+str);
+  }
+  return newObj;
+}
+addSignature("Fred", {"contract": "foo"})
 
 
 
@@ -823,7 +980,17 @@ If you pass {name: "Will", age: 24} it should return ["name - will", "age - 24"]
 */
 
 
+var obj1 = {name: "Will", age: 24}
 
+
+function pairs(obj) {
+  var arr = [];
+  for (let key in obj) {
+    arr.push(key + " - " + obj[key]);
+  }
+return arr
+}
+pairs(obj1)
 
 
 
@@ -842,7 +1009,15 @@ If you pass {a: 1, b: 2} it should return 3
 */
 
 
-
+var obj = {a: 1, b: 2, c: 5};
+function sumValues(obj) {
+var total = 0;
+for (var key in obj) {
+    total += obj[key];
+}
+return total;
+}
+sumValues(obj)
 
 
 
@@ -860,18 +1035,22 @@ Example:
 If you pass {1999: 4036, 2000: 7654} it should return '2000'
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
+var myobj = {1999: -2, 2000: -1000}
+function biggestProperty(obj) {
+  for (let key in obj) {
+    if (!highest){
+      var highest = obj[key];
+      var myKey = key;
+    } else{
+      if (obj[key] > highest){
+        highest = obj[key];
+        myKey = key;
+      }
+    }
+}
+return myKey;
+}
+biggestProperty(myobj);
 
 /*
 ----------------------------------------
@@ -885,12 +1064,22 @@ Example:
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return '1999'
 */
 
+var val = 4036
+var obj = {1999: 4036, 2000: 7654}
 
 
-
-
-
-
+function keyForValue(obj, val) {
+  var hold = 0;
+  for (var key in obj) {
+    if (val === obj[key]) {
+      hold = val;
+    }
+    if (hold === val) {
+    return key;
+}
+}
+}
+keyForValue(obj, val)
 
 
 
@@ -906,7 +1095,19 @@ Example:
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
 
-
+function containsValue(obj, value) {
+  var hold = 0;
+  for (var key in obj) {
+    if(value === obj[key]) {
+      hold = value;
+    }
+    } if(hold !== 0) {
+      return true;
+    } if (hold === 0) {
+      return false;
+  }
+}
+containsValue({}, 4036)
 
 
 
@@ -915,3 +1116,53 @@ If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 
 
 //
+
+/*
+PRACTICE BELOW - OTHER ACCUM PROBLEMS!!!!!!!!!
+
+//
+// /*
+// Create a function that, given a string, returns all of that strings contents, but without blanks. If given the string " Sw  e  e t alg  o" it will return "Sweetalgo"
+// */
+//
+// var myStr = (" Sw  e  e t alg  o")
+// function withoutSpaces(input){
+//  var result = input.replace(/ /g, "");
+//  console.log(result);
+//
+// }
+// withoutSpaces(myStr);
+//
+// /*
+// Create a function that, given a string, returns the string's acronym (first letters capitalized). If given the string "What's up buddy" return "WUB".
+// */
+//
+// // var str = "Trevor cole Young";
+// function acronym(str) {
+//   var arr = str.split(" ");
+//   var newStr = "";
+//   for (var i = 0; i<arr.length; i++) {
+//     newStr += arr[i][0];
+//   }
+//   return newStr.toUpperCase();
+// }
+// acronym(str);
+//
+//
+// /*
+// Write a function that takes an array of strings and a Number value to represent string length. Remove all strings in the array with a length shorter than that number. ["Hey", "you're", "great", "Man"], 4 would return ["you're", "great"]
+// */
+//
+// var num = 4;
+// var arr = ["Hurricane", "Irma", "is", "coming", "for", "us", "all!"];
+// function greaterThanFour(arr, num) {
+//   var newArr = [];
+//   for (var i = 0; i < arr.length; i++) {
+//     if (arr[i].length >= num) {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   return newArr;
+// }
+//
+// greaterThanFour(arr, num);
